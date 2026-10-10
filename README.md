@@ -19,3 +19,7 @@ python3 -m http.server -d public 8000
 
 Hosted on Cloudflare Workers (static assets, config in `wrangler.jsonc`): production branch `main`, no build command, assets served from `public`.
 Pushing to `main` deploys automatically. `www.mishrabhinav.com` 301-redirects to `mishrabhinav.com` via a Cloudflare Redirect Rule.
+
+## Credits
+
+Headings use [Source Serif 4](https://github.com/adobe-fonts/source-serif) (Copyright Adobe), licensed under the SIL Open Font License 1.1. The self-hosted latin subset and license text are in `public/fonts/` (see [`public/fonts/OFL.txt`](public/fonts/OFL.txt)). The visual style is original; it does not use any Anthropic or Claude logos, marks or fonts and is not affiliated with Anthropic.
