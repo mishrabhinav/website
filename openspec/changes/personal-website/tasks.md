@@ -30,7 +30,7 @@
 - [x] 5.2 Attach `mishrabhinav.com` as the custom domain; verify `curl -I https://mishrabhinav.com/` returns 200 with a valid certificate
 - [x] 5.3 Add a proxied `www` DNS record and a Redirect Rule `www.mishrabhinav.com/*` → `https://mishrabhinav.com/${1}` (301); remove any stale apex → www redirect or page rule; verify `curl -I https://www.mishrabhinav.com/` returns 301 to the apex and the apex does not redirect
 - [x] 5.4 Enable "Always Use HTTPS"; verify `curl -I http://mishrabhinav.com/` redirects to HTTPS
-- [ ] 5.5 Verify the push-to-deploy flow: change the tagline, push to `main`, and confirm the live site updates; also verify link previews on the live URL with a preview debugger
+- [x] 5.5 Verify the push-to-deploy flow: change the tagline, push to `main`, and confirm the live site updates; also verify link previews on the live URL with a preview debugger
 
 ## Workflow follow-up
 
