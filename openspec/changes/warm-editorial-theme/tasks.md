@@ -22,7 +22,7 @@
 - [x] 4.1 Run Lighthouse (mobile) on the local site; verify Performance, Accessibility, Best Practices and SEO are all at least 95
 - [x] 4.2 Verify the first load makes only same-origin requests, transfers under 100 KB with an empty cache, and works with JavaScript disabled
 - [x] 4.3 Review published files and copy for brand-asset compliance; verify `grep -ri "anthropic\|claude" public/` returns nothing and no font other than Source Serif 4 is bundled
-- [ ] 4.4 Commit locally; after the owner pushes, verify live `curl -I https://mishrabhinav.com/fonts/` font URL returns 200 with `content-type: font/woff2` and the long-lived `cache-control`, and the live page renders the serif
+- [x] 4.4 Commit locally; after the owner pushes, verify live `curl -I https://mishrabhinav.com/fonts/` font URL returns 200 with `content-type: font/woff2` and the long-lived `cache-control`, and the live page renders the serif
 
 ## Workflow follow-up
 
