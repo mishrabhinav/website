@@ -22,7 +22,7 @@
 
 - [ ] 4.1 Add `public/_headers` with CSP (`default-src 'self'`), `X-Content-Type-Options` and `Referrer-Policy`; verify after deploy with `curl -I` that headers are returned and the page still renders without CSP console errors
 - [x] 4.2 Write `README.md` covering how to edit content, preview locally (`python3 -m http.server -d public`), and deploy; verify the documented preview command works as written
-- [ ] 4.3 Initialize git hygiene (`.gitignore`), commit, and push to a GitHub repository; verify the remote shows the `public/` files on `main`
+- [x] 4.3 Initialize git hygiene (`.gitignore`), commit, and push to a GitHub repository; verify the remote shows the `public/` files on `main`
 
 ## 5. Cloudflare Pages and domain cutover
 
