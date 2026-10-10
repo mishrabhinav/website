@@ -20,13 +20,13 @@
 
 ## 4. Deployment config and docs
 
-- [ ] 4.1 Add `public/_headers` with CSP (`default-src 'self'`), `X-Content-Type-Options` and `Referrer-Policy`; verify after deploy with `curl -I` that headers are returned and the page still renders without CSP console errors
+- [x] 4.1 Add `public/_headers` with CSP (`default-src 'self'`), `X-Content-Type-Options` and `Referrer-Policy`; verify after deploy with `curl -I` that headers are returned and the page still renders without CSP console errors
 - [x] 4.2 Write `README.md` covering how to edit content, preview locally (`python3 -m http.server -d public`), and deploy; verify the documented preview command works as written
 - [x] 4.3 Initialize git hygiene (`.gitignore`), commit, and push to a GitHub repository; verify the remote shows the `public/` files on `main`
 
 ## 5. Cloudflare Pages and domain cutover
 
-- [ ] 5.1 Create the Cloudflare Pages project from the repo (production branch `main`, no build command, output dir `public`); verify the `*.pages.dev` URL serves the site
+- [x] 5.1 Create the Cloudflare Pages project from the repo (production branch `main`, no build command, output dir `public`); verify the `*.pages.dev` URL serves the site
 - [ ] 5.2 Attach `mishrabhinav.com` as the custom domain; verify `curl -I https://mishrabhinav.com/` returns 200 with a valid certificate
 - [ ] 5.3 Add a proxied `www` DNS record and a Redirect Rule `www.mishrabhinav.com/*` → `https://mishrabhinav.com/${1}` (301); remove any stale apex → www redirect or page rule; verify `curl -I https://www.mishrabhinav.com/` returns 301 to the apex and the apex does not redirect
 - [ ] 5.4 Enable "Always Use HTTPS"; verify `curl -I http://mishrabhinav.com/` redirects to HTTPS
