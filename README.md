@@ -17,5 +17,5 @@ python3 -m http.server -d public 8000
 
 ## Deploy
 
-Hosted on Cloudflare Pages: production branch `main`, no build command, output directory `public`.
+Hosted on Cloudflare Workers (static assets, config in `wrangler.jsonc`): production branch `main`, no build command, assets served from `public`.
 Pushing to `main` deploys automatically. `www.mishrabhinav.com` 301-redirects to `mishrabhinav.com` via a Cloudflare Redirect Rule.

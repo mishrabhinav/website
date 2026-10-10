@@ -18,7 +18,7 @@ The repo is empty apart from OpenSpec scaffolding. The domain's DNS is already o
 
 **Plain HTML + CSS, no framework or build step.** A single `public/index.html` plus `public/style.css`. Alternatives: Astro/Next (adds Node toolchain and dependency upkeep, contradicting "low maintenance"); a single file with inline CSS (fewer requests, but a separate stylesheet keeps editing simple and the size is negligible).
 
-**Cloudflare Pages with Git integration.** Production branch `main`, no build command, output directory `public`. DNS is already on Cloudflare, so the custom domain attaches with automatic records and managed TLS. Alternative: GitHub Pages (also free, but DNS/redirect rules would be split across two vendors).
+**Cloudflare Workers static assets with Git integration.** Cloudflare now steers new static sites to Workers rather than Pages, so the site is a Worker with no code, serving `public/` as static assets (config in `wrangler.jsonc`). Production branch `main`, no build command. Alternative: Pages (legacy, same features for this use). DNS is already on Cloudflare, so the custom domain attaches with automatic records and managed TLS. Alternative: GitHub Pages (also free, but DNS/redirect rules would be split across two vendors).
 
 **Canonical host: apex `mishrabhinav.com`.** Cloudflare Redirect Rule sends `www` to apex with 301 preserving path and query. `www` needs a proxied DNS record (e.g. a dummy `AAAA 100::`) so the rule can fire. Alternative: `www` canonical (apex needs CNAME flattening, which Cloudflare supports, but shorter URL is nicer for a personal domain). The old registrar/redirect configuration that produces the current apex → www 301 must be removed or overridden.
 
@@ -38,7 +38,7 @@ The repo is empty apart from OpenSpec scaffolding. The domain's DNS is already o
 ## Migration Plan
 
 1. Build and verify the site locally.
-2. Push to GitHub; create the Pages project and verify on the `*.pages.dev` URL.
+2. Push to GitHub; create the Workers project and verify on the `*.workers.dev` URL.
 3. Attach `mishrabhinav.com` as the custom domain, add the `www` record and redirect rule, remove stale redirects.
 4. Verify HTTPS, the redirect behavior and the previews on the live domain.
-5. Rollback: re-deploy the previous commit in Pages (instant), or remove the custom domain binding.
+5. Rollback: roll back to the previous deployment in the Worker's Deployments tab (instant), or remove the custom domain binding.
